@@ -219,6 +219,24 @@ p {
   color: #1a73e8;
 }
 
+/* Styles for Sanskrit Word Entries */
+.word {
+  font-size: 1.2rem; /* Bigger font size */
+  font-weight: bold; /* Bold */
+  color: #1a73e8; /* Blue color */
+}
+
+.translation {
+  font-weight: normal; /* Non-bold */
+  color: #333; /* Default text color */
+}
+
+.root-word {
+  font-weight: bold; /* Bold */
+  color: #000; /* Black color */
+  font-style: normal; /* Override italic if needed */
+}
+
 /* Dark Mode Styles */
 @media (prefers-color-scheme: dark) {
   body {
@@ -260,5 +278,18 @@ p {
     background-color: #1a73e8;
     color: #e0e0e0;
     border-top-color: #444;
+  }
+
+  /* Dark mode adjustments for Sanskrit word entries */
+  .word {
+    color: #4a90e2; /* Blue color for dark mode */
+  }
+
+  .translation {
+    color: #e0e0e0; /* Light text color for dark mode */
+  }
+
+  .root-word {
+    color: #fff; /* White color for dark mode */
   }
 }
