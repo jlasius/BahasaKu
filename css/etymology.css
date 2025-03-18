@@ -1,0 +1,264 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Skip to Main Content */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  background-color: #1a73e8;
+  color: white;
+  text-align: center;
+  clip: auto;
+}
+
+/* Header Banner */
+.header-banner {
+  background-color: #4a90e2;
+  padding: 1.25rem;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background-color: #4a90e2 !important;
+  padding: 0;
+}
+
+.navbar-toggler {
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: transparent;
+  margin-right: auto;
+  margin-left: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-collapse {
+  background-color: #4a90e2;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: height 0.3s ease-in-out;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-collapse.show {
+  height: auto;
+}
+
+.navbar-nav {
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Footer */
+.footer {
+  background-color: #4a90e2;
+  color: white;
+  padding: .3rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+}
+
+.footer p {
+  color: white; /* Ensures the text is white */
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mascot Styling */
+.mascot-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1a73e8;
+  margin-bottom: 1rem;
+}
+
+/* Introduction Text */
+.introduction-text {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.introduction-text h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Language Sections */
+.language-sections {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.language-section {
+  margin-bottom: 1rem;
+}
+
+.language-toggle {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.language-toggle:hover {
+  background-color: #357abd;
+}
+
+.language-content {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.language-content img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.language-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.language-content li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.language-content li strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #1a73e8;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  .introduction-text, .language-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  .language-toggle {
+    background-color: #1a73e8;
+  }
+
+  .language-toggle:hover {
+    background-color: #1356a1;
+  }
+
+  .language-content li strong {
+    color: #4a90e2;
+  }
+
+  /* Dark Mode Banner Fix */
+  .header-banner {
+    background-color: #1a73e8 !important; /* Ensure banner is blue in dark mode */
+  }
+
+  .navbar-collapse {
+    background-color: #1a73e8;
+  }
+
+  .navbar {
+    background-color: #1a73e8 !important;
+  }
+
+  .footer {
+    background-color: #1a73e8;
+    color: #e0e0e0;
+    border-top-color: #444;
+  }
+}
