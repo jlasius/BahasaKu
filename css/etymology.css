@@ -266,10 +266,19 @@ p {
     color: #e0e0e0;
   }
 
+  p.discover-text {
+    color: #e0e0e0; /* Dark mode color */
+  }
+
   .introduction-text, .language-content {
     background-color: #1e1e1e;
     color: #e0e0e0;
   }
+
+  .introduction-text p {
+    color: #e0e0e0; /* Fix for greyish text in dark mode */
+  }
+
 
   .language-toggle {
     background-color: #1a73e8;
