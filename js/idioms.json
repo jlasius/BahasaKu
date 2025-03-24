@@ -510,6 +510,15 @@
           "English": "Make a thousand friends, but only fight with one; don’t seek enemies."
       }
   },
+      {
+          "idiom": "Raja sehari",
+          "translation": "King/Queen for a day",
+          "explanation": "Refers to a bride or groom on their wedding day, treated like royalty for that special occasion.",
+          "example": {
+              "BM": "Pengantin itu diraikan seperti raja sehari.",
+              "English": "The bride and groom were celebrated like royalty for a day."
+              }
+          },        
   {
       "idiom": "Bersahabat baik",
       "translation": "Being good friends.",
@@ -788,15 +797,6 @@
               "example": {
                   "BM": "Jangan malu bertanya, malu bertanya sesat jalan.",
                   "English": "Don’t be shy to ask; asking for help is better than failing."
-              }
-          },
-         {
-          "idiom": "Raja sehari",
-          "translation": "King/Queen for a day",
-          "explanation": "Refers to a bride or groom on their wedding day, treated like royalty for that special occasion.",
-          "example": {
-              "BM": "Pengantin itu diraikan seperti raja sehari.",
-              "English": "The bride and groom were celebrated like royalty for a day."
               }
           },
           {
