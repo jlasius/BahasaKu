@@ -49,9 +49,17 @@ p {
   z-index: 1000;
 }
 
+.header-banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   background-color: #4a90e2 !important;
   padding: 0;
+  width: 100%;
+  justify-content: center;
 }
 
 .navbar-toggler {
@@ -59,8 +67,7 @@ p {
   border-radius: 4px;
   padding: 0.5rem;
   background-color: transparent;
-  margin-right: auto;
-  margin-left: 0;
+  margin: 0 auto;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -82,9 +89,14 @@ p {
   transition: height 0.3s ease-in-out;
   height: 0;
   overflow: hidden;
-  position: relative;
-  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 300px;
   z-index: 1000;
+  margin-top: 0.5rem;
 }
 
 .navbar-collapse.show {
@@ -94,6 +106,7 @@ p {
 .navbar-nav {
   flex-direction: column;
   padding-left: 0;
+  text-align: center;
 }
 
 .nav-link {
