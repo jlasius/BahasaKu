@@ -108,6 +108,15 @@ p {
   border-radius: 4px;
 }
 
+.nav-link.current-page {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-weight: bold;
+  color: white !important;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Footer */
 .footer {
   background-color: #4a90e2;
