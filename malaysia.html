@@ -25,7 +25,7 @@
               <a class="nav-link" href="start.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="idioms.html">Idioms</a>
+              <a class="nav-link" href="index.html">Idioms</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="etymology.html">Etymology</a>
@@ -246,7 +246,7 @@
     const apiKey = '5ad8ac241f5b898f437ebbb8489a6bc2'; // Replace with your API key
     const city = 'Kuala Lumpur';
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-
+    
     fetch(weatherUrl)
       .then(response => response.json())
       .then(data => {
