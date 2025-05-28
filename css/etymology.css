@@ -82,14 +82,9 @@ p {
   transition: height 0.3s ease-in-out;
   height: 0;
   overflow: hidden;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 300px;
+  position: relative;
+  width: 100%;
   z-index: 1000;
-  margin-top: 0.5rem;
 }
 
 .navbar-collapse.show {
@@ -99,7 +94,6 @@ p {
 .navbar-nav {
   flex-direction: column;
   padding-left: 0;
-  text-align: center;
 }
 
 .nav-link {
