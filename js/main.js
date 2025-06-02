@@ -5,8 +5,35 @@ let currentIdioms = [];
 let currentIndex = 0;
 let isFlipped = false;
 
+// Add event listeners only if elements exist
 document.addEventListener('DOMContentLoaded', function() {
-  // Only run if we're on a page that has these elements
+  // Check if we're on a page with flashcard functionality
+  const flipButton = document.getElementById('flip-btn');
+  const nextButton = document.getElementById('next-btn');
+  const prevButton = document.getElementById('prev-btn');
+  const backButton = document.getElementById('back-btn');
+
+  if (flipButton) {
+    flipButton.addEventListener('click', flipCard);
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener('click', nextCard);
+  }
+
+  if (prevButton) {
+    prevButton.addEventListener('click', previousCard);
+  }
+
+  if (backButton) {
+    backButton.addEventListener('click', goBack);
+  }
+
+  // Add keyboard event listeners only if we have flashcard elements
+  if (flipButton || nextButton || prevButton) {
+    document.addEventListener('keydown', handleKeyPress);
+  }
+
   const categorySelect = document.getElementById('category-select');
   const flashcardsContainer = document.getElementById('flashcards-container');
 
@@ -66,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Flashcard functionality
 function initializeFlashcards() {
   // Get category from URL parameters
   const urlParams = new URLSearchParams(window.location.search);
@@ -98,18 +124,17 @@ function initializeFlashcards() {
       })
       .catch(error => console.error('Error loading idioms:', error));
   }
-
-  // Add keyboard event listeners
-  document.addEventListener('keydown', handleKeyPress);
 }
 
 function displayCurrentCard() {
   if (currentIdioms.length === 0) return;
-  
+
   const idiom = currentIdioms[currentIndex];
   const idiomText = document.getElementById('idiom-text');
   const translationText = document.getElementById('translation-text');
-  
+
+  if (!idiomText || !translationText) return;
+
   // Reset card state
   isFlipped = false;
   idiomText.textContent = idiom.idiom;
@@ -125,7 +150,9 @@ function displayCurrentCard() {
 function flipCard() {
   const idiomText = document.getElementById('idiom-text');
   const translationText = document.getElementById('translation-text');
-  
+
+  if (!idiomText || !translationText) return;
+
   if (!isFlipped) {
     idiomText.classList.add('d-none');
     translationText.classList.remove('d-none');
@@ -139,14 +166,14 @@ function flipCard() {
 
 function nextCard() {
   if (currentIdioms.length === 0) return;
-  
+
   currentIndex = (currentIndex + 1) % currentIdioms.length;
   displayCurrentCard();
 }
 
 function previousCard() {
   if (currentIdioms.length === 0) return;
-  
+
   currentIndex = currentIndex === 0 ? currentIdioms.length - 1 : currentIndex - 1;
   displayCurrentCard();
 }
