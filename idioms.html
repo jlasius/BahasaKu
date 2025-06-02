@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about BahasaKu and the story behind this fun project to explore Malay language.">
-  <title>About - BahasaKu</title>
+  <meta name="description" content="Browse categories of Malay idioms on BahasaKu.">
+  <title>Idioms - BahasaKu</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,10 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="idioms.html">Idioms</a>
+              <span class="nav-link current-page">Idioms</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="glossary.html">Glossary</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="etymology.html">Etymology</a>
@@ -36,7 +39,7 @@
               <a class="nav-link" href="malaysia.html">Visit Malaysia</a>
             </li>
             <li class="nav-item">
-              <span class="nav-link current-page">About</span>
+              <a class="nav-link" href="about.html">About</a>
             </li>
           </ul>
         </div>
@@ -48,23 +51,23 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <main class="container mt-5" id="main-content">
+    <!-- Mascot and Categories Title -->
     <div class="text-center">
       <img src="images/mascot.jpeg" alt="IdiomKu Mascot" class="mascot-image">
-      <h1>About IdiomKu</h1>
-      <p class="lead">Explore the richness of Malay idioms in a fun and accessible way.</p>
+     <h1>Welcome!</h1>
+      <h2>Choose a Category</h2>
+      <p>Explore a collection of Malay idioms organized into categories. Learn their meanings and usage in a fun and interactive way!</p>
     </div>
-
-    <!-- Single-column layout with more whitespace -->
-    <div class="about-content mx-auto p-4 mt-5">
-      <p>
-        Hi, I’m Julian, the creator of IdiomKu! While studying Bahasa Malaysia and interning at Dewan Bahasa dan Pustaka under the guidance of some exceptional mentors, I became fascinated by Malay idioms - expressions that offer cultural insights beyond direct translation. I wanted to create something fun and easy to use while also experimenting with AI in the process.
-      </p>
-      <p>
-        IdiomKu lets you browse and quiz yourself on idioms anytime. Meet <strong>Sang</strong>, our clever mousedeer mascot, inspired by those who use idioms masterfully. If I find the time, I’ll create more projects, like a guide to mastering Bahasa’s tricky <a href="https://wisc.pb.unizin.org/lctlresources/chapter/a-start-to-suffixes-and-prefixes/"><em>imbuhan</em></a> grammar forms. Stay tuned!
-      </p>
-      <p>
-        Ready to explore? <a href="index.html" class="btn btn-primary mt-3">Start Learning Now!</a>
-      </p>
+    <!-- Categories Container -->
+    <div class="categories-container" role="navigation" aria-label="Categories">
+      <a href="flashcards.html?category=emotions" class="category-link" aria-label="Emotions and Feelings"><strong>Emotions and Feelings</strong> - Emosi dan Perasaan </a>
+      <a href="flashcards.html?category=work" class="category-link" aria-label="Work and Effort"><strong>Work and Effort</strong> - Kerja dan Usaha </a>
+      <a href="flashcards.html?category=relationships" class="category-link" aria-label="Relationships and Social Interactions"><strong>Relationships and Social Interactions</strong> - Hubungan dan Interaksi Sosial</a>
+      <a href="flashcards.html?category=nature" class="category-link" aria-label="Nature and Animals"><strong>Nature and Animals</strong> - Alam Semula Jadi dan Haiwan</a>
+      <a href="flashcards.html?category=success" class="category-link" aria-label="Success and Failure"><strong>Success and Failure</strong> - Kejayaan dan Kegagalan</a>
+      <a href="flashcards.html?category=wisdom" class="category-link" aria-label="Wisdom and Life Lessons"><strong>Wisdom and Life Lessons</strong> - Hikmah dan Pengajaran Kehidupan</a>
+      <a href="flashcards.html?category=challenges" class="category-link" aria-label="Challenges and Struggles"><strong>Challenges and Struggles</strong> - Cabaran dan Perjuangan</a>
+      <a href="flashcards.html?category=miscellaneous" class="category-link" aria-label="Miscellaneous"><strong>Miscellaneous</strong> - Macam Macam</a>
     </div>
   </main>
 
@@ -73,7 +76,7 @@
     <div class="container">
       <p>
         Created by <strong>Julian L.</strong> &copy; 2025 |
-         <a href="mailto:julianrichard@gmail.com">Feedback</a>
+         <a href="mailto:julianrichard@gmail.com">Feedback</a>      
       </p>
     </div>
   </footer>
