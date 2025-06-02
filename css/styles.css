@@ -16,7 +16,7 @@ h1, h2, h3 {
 
 p {
   font-size: 1.1rem;
-  color: #555;
+  color: #333;
 }
 
 /* Skip to Main Content */
@@ -222,8 +222,6 @@ p {
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: auto;
-  position: sticky;
-  bottom: 0;
   width: 100%;
 }
 
@@ -368,7 +366,7 @@ p {
   text-align: left;
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: #333;
 }
 
 #translation-text strong {
@@ -481,13 +479,13 @@ p {
 .category-section li em {
   display: block;
   font-style: italic;
-  color: #555;
+  color: #333;
   margin-bottom: 0.5rem;
 }
 
 .category-section li .example {
   display: block;
-  color: #666;
+  color: #333;
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
