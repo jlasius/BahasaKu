@@ -1,5 +1,10 @@
 // Main JavaScript file for BahasaKu
 
+// Global variables for flashcards
+let currentIdioms = [];
+let currentIndex = 0;
+let isFlipped = false;
+
 document.addEventListener('DOMContentLoaded', function() {
   // Only run if we're on a page that has these elements
   const categorySelect = document.getElementById('category-select');
@@ -29,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Error loading idioms:', error));
   }
 
+  // Initialize flashcards if on flashcards page
+  if (window.location.pathname.includes('flashcards.html')) {
+    initializeFlashcards();
+  }
+
   // Function to display flashcards
   function displayFlashcards(idioms) {
     if (!flashcardsContainer) return;
@@ -55,3 +65,109 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Flashcard functionality
+function initializeFlashcards() {
+  // Get category from URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get('category');
+  
+  if (category) {
+    // Load idioms for the specific category
+    fetch('js/idioms.json')
+      .then(response => response.json())
+      .then(data => {
+        // Find the category in the data
+        const categoryData = data.categories.find(cat => 
+          cat.name.toLowerCase().replace(/\s+/g, '').includes(category) ||
+          category === 'emotions' && cat.name.includes('Emotions') ||
+          category === 'work' && cat.name.includes('Work') ||
+          category === 'relationships' && cat.name.includes('Relationships') ||
+          category === 'nature' && cat.name.includes('Nature') ||
+          category === 'success' && cat.name.includes('Success') ||
+          category === 'wisdom' && cat.name.includes('Wisdom') ||
+          category === 'challenges' && cat.name.includes('Challenges') ||
+          category === 'miscellaneous' && cat.name.includes('Miscellaneous')
+        );
+        
+        if (categoryData) {
+          currentIdioms = categoryData.idioms;
+          document.getElementById('category-title').textContent = categoryData.name;
+          displayCurrentCard();
+        }
+      })
+      .catch(error => console.error('Error loading idioms:', error));
+  }
+
+  // Add keyboard event listeners
+  document.addEventListener('keydown', handleKeyPress);
+}
+
+function displayCurrentCard() {
+  if (currentIdioms.length === 0) return;
+  
+  const idiom = currentIdioms[currentIndex];
+  const idiomText = document.getElementById('idiom-text');
+  const translationText = document.getElementById('translation-text');
+  
+  // Reset card state
+  isFlipped = false;
+  idiomText.textContent = idiom.idiom;
+  translationText.classList.add('d-none');
+  translationText.innerHTML = `
+    <strong>Translation:</strong> ${idiom.translation}<br>
+    <strong>Explanation:</strong> ${idiom.explanation}<br>
+    <strong>Example (BM):</strong> ${idiom.example.BM}<br>
+    <strong>Example (English):</strong> ${idiom.example.English}
+  `;
+}
+
+function flipCard() {
+  const idiomText = document.getElementById('idiom-text');
+  const translationText = document.getElementById('translation-text');
+  
+  if (!isFlipped) {
+    idiomText.classList.add('d-none');
+    translationText.classList.remove('d-none');
+    isFlipped = true;
+  } else {
+    idiomText.classList.remove('d-none');
+    translationText.classList.add('d-none');
+    isFlipped = false;
+  }
+}
+
+function nextCard() {
+  if (currentIdioms.length === 0) return;
+  
+  currentIndex = (currentIndex + 1) % currentIdioms.length;
+  displayCurrentCard();
+}
+
+function previousCard() {
+  if (currentIdioms.length === 0) return;
+  
+  currentIndex = currentIndex === 0 ? currentIdioms.length - 1 : currentIndex - 1;
+  displayCurrentCard();
+}
+
+function goBack() {
+  window.history.back();
+}
+
+function handleKeyPress(event) {
+  switch(event.code) {
+    case 'Space':
+      event.preventDefault();
+      flipCard();
+      break;
+    case 'ArrowLeft':
+      event.preventDefault();
+      previousCard();
+      break;
+    case 'ArrowRight':
+      event.preventDefault();
+      nextCard();
+      break;
+  }
+}
