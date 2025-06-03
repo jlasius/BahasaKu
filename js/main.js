@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     backButton.addEventListener('click', goBack);
   }
 
-  // Add keyboard event listeners only if we have flashcard elements
-  if (flipButton || nextButton || prevButton) {
+  // Add keyboard event listeners for flashcards page
+  if (window.location.pathname.includes('flashcards.html')) {
     document.addEventListener('keydown', handleKeyPress);
   }
 
