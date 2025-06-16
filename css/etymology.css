@@ -75,30 +75,134 @@ p {
   border-color: rgba(255, 255, 255, 0.8);
 }
 
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Skip to Main Content */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  background-color: #1a73e8;
+  color: white;
+  text-align: center;
+  clip: auto;
+}
+
+/* Header Banner */
+.header-banner {
+  background-color: #4a90e2;
+  padding: 1rem 0;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background-color: #4a90e2 !important;
+  padding: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler {
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: transparent !important;
+  margin-left: auto;
+  order: 2;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
 .navbar-toggler:focus {
   outline: none;
-  box-shadow: none;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
 }
 
 .navbar-collapse {
   background-color: #4a90e2;
   border-radius: 8px;
   padding: 1rem;
-  transition: height 0.3s ease-in-out;
-  height: 0;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  z-index: 1000;
-}
-
-.navbar-collapse.show {
-  height: auto;
+  margin-top: 0.5rem;
+  order: 3;
+  flex-basis: 100%;
 }
 
 .navbar-nav {
   flex-direction: column;
   padding-left: 0;
+}
+
+/* Desktop navbar styles */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+  
+  .navbar-collapse {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0;
+    order: 1;
+    flex-basis: auto;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 
 .nav-link {
