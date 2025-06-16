@@ -1,3 +1,4 @@
+
 // Main JavaScript file for BahasaKu
 
 // Global variables for flashcards
@@ -120,6 +121,8 @@ function initializeFlashcards() {
           currentIdioms = categoryData.idioms;
           document.getElementById('category-title').textContent = categoryData.name;
           displayCurrentCard();
+        } else {
+          console.error('Category not found:', category);
         }
       })
       .catch(error => console.error('Error loading idioms:', error));
@@ -138,6 +141,7 @@ function displayCurrentCard() {
   // Reset card state
   isFlipped = false;
   idiomText.textContent = idiom.idiom;
+  idiomText.classList.remove('d-none');
   translationText.classList.add('d-none');
   translationText.innerHTML = `
     <strong>Translation:</strong> ${idiom.translation}<br>
