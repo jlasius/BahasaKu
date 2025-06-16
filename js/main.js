@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const flipButton = document.getElementById('flip-btn');
   const nextButton = document.getElementById('next-btn');
   const prevButton = document.getElementById('prev-btn');
-  const backButton = document.getElementById('back-btn');
 
   if (flipButton) {
     flipButton.addEventListener('click', flipCard);
@@ -26,13 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     prevButton.addEventListener('click', previousCard);
   }
 
-  if (backButton) {
-    backButton.addEventListener('click', goBack);
-  }
-
   // Add keyboard event listeners for flashcards page
   if (window.location.pathname.includes('flashcards.html')) {
     document.addEventListener('keydown', handleKeyPress);
+    initializeFlashcards();
   }
 
   const categorySelect = document.getElementById('category-select');
@@ -62,12 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Error loading idioms:', error));
   }
 
-  // Initialize flashcards if on flashcards page
-  if (window.location.pathname.includes('flashcards.html')) {
-    initializeFlashcards();
-  }
-
-  // Function to display flashcards
+  // Function to display flashcards (for multi-card view if needed)
   function displayFlashcards(idioms) {
     if (!flashcardsContainer) return;
 
@@ -180,10 +171,6 @@ function previousCard() {
 
   currentIndex = currentIndex === 0 ? currentIdioms.length - 1 : currentIndex - 1;
   displayCurrentCard();
-}
-
-function goBack() {
-  window.history.back();
 }
 
 function handleKeyPress(event) {
