@@ -1,0 +1,11 @@
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jlasius.github.io/BahasaKu/sitemap.xml
+
+# Disallow crawling of assets folder if needed
+User-agent: *
+Disallow: /attached_assets/
